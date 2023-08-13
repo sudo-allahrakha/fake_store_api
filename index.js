@@ -9,7 +9,7 @@ const db=require("./config/db");
 
 
 const port = process.env.PORT || 3000;
-const host=process.env.HTTP_HOST || 'localhost';
+const host=process.env.HTTP_HOST || '0.0.0.0';
 
 const app = express();
 app.use(morgan("dev"));
