@@ -8,7 +8,9 @@ const db=require("./config/db");
 
 
 
-const port = 5000;
+const port = process.env.PORT || 3000;
+const host=process.env.HTTP_HOST || 'localhost';
+
 const app = express();
 app.use(morgan("dev"));
 app.use(cors())
@@ -27,6 +29,6 @@ app.use("/users", userRoutes);
 
 
 
-app.listen(port, () => {
+app.listen(port, host,() => {
   console.log(`Server is running at ${port} ....`);
 });
